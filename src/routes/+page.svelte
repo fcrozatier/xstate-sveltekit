@@ -1,7 +1,10 @@
 <script lang="ts">
-	import { state, send } from '$lib/stateMachine';
+	// import { state, send } from '$lib/stateMachine';
+	import { actor } from '$lib/stateMachine';
 
-	$: console.log($state);
+	// $: console.log($state);
+
+	const { state, send } = $actor;
 </script>
 
 <h1>Toggle machine</h1>

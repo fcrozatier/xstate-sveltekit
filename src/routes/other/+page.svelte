@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { state, send } from '$lib/stateMachine';
+	// import { state, send } from '$lib/stateMachine';
+	import { actor } from '$lib/stateMachine';
+
+	const { state, send } = $actor;
 </script>
 
 <h1>Toggle machine on other page</h1>
