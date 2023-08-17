@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
+	import type { Actor } from '$lib/stateMachine';
 
-	const actor = getContext<any>('actor');
-
-	const { state, send } = actor;
+	const { state, send } = getContext<Actor>('actor');
 </script>
 
 <h1>Toggle machine on other page</h1>

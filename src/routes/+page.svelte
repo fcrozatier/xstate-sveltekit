@@ -2,9 +2,7 @@
 	import { getContext } from 'svelte';
 	import type { Actor } from '$lib/stateMachine';
 
-	const actor = getContext<Actor>('actor');
-
-	const { state, send } = actor;
+	const { state, send } = getContext<Actor>('actor');
 </script>
 
 <h1>Toggle machine</h1>
