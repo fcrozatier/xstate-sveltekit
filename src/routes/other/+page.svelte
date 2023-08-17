@@ -1,13 +1,11 @@
 <script lang="ts">
 	import { state, send } from '$lib/stateMachine';
-
-	$: console.log($state);
 </script>
 
-<h1>Toggle machine</h1>
+<h1>Toggle machine on other page</h1>
 
 <p>Current state : {$state?.value}</p>
 
 <p><button on:click={() => send?.('toggle')}>Toggle</button></p>
 
-<p><a href="/other">Go to other page</a></p>
+<p><a href="/">Go to main page</a></p>
