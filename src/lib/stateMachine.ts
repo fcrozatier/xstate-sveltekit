@@ -19,7 +19,13 @@ const toggleMachine = createMachine({
 	}
 });
 
-// Can't use this line because -> Function called outside of component initialization
+// Can't use this line because -> Function called outside of component initialization in server logs
 // export const { state, send } = useMachine(toggleMachine);
 
-export const { state, send } = browser ? useMachine(toggleMachine) : { state: null, send: null };
+// Doesn't work either -> Function called outside of component initialization in browser console
+// export const { state, send } = browser ? useMachine(toggleMachine) : { state: null, send: null };
+
+// Doesn't work as expected -> reinitialized on every page
+export const actor = writable<{ state: any; send: any }>(undefined, (set) => {
+	set(useMachine(toggleMachine));
+});
